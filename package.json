@@ -1,7 +1,7 @@
 {
-  "name": "huntapp",
+  "name": "hunt-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -9,10 +9,29 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~53.0.9",
+    "@expo/metro-runtime": "~5.0.4",
+    "@expo/vector-icons": "^14.0.0",
+    "@react-navigation/bottom-tabs": "^6.6.1",
+    "@react-navigation/native": "^6.1.18",
+    "date-fns": "^3.0.0",
+    "expo": "~53.0.0",
+    "expo-linear-gradient": "~14.1.4",
+    "expo-location": "~18.1.5",
     "expo-status-bar": "~2.2.3",
+    "firebase": "^10.10.0",
+    "metro": "^0.82.3",
+    "metro-react-native-babel-preset": "^0.77.0",
+    "metro-resolver": "^0.82.3",
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-dom": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-maps": "1.20.1",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.10.0",
+    "react-native-web": "^0.20.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
