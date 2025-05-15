@@ -1,5 +1,8 @@
+// Esempio di modifica per screens/HomeScreen.js
+
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, StatusBar, SafeAreaView, StyleSheet } from 'react-native';
+import { View, FlatList, StatusBar, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import HeaderDates from '../components/HeaderDates';
 import CardEvento from '../components/CardEvento';
@@ -41,7 +44,7 @@ const HomeScreen = ({ userLocation }) => {
   };
   
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       <StatusBar barStyle="light-content" />
       
       <HeaderDates

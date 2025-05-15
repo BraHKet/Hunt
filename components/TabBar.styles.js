@@ -1,3 +1,5 @@
+// Modifica components/TabBar.styles.js
+
 import { StyleSheet, Platform } from 'react-native';
 import { theme } from '../context/ThemeContext';
 
@@ -5,14 +7,14 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: theme.colors.card,
-    height: 80,
+    height: 60, // Altezza base ridotta (il padding bottom viene aggiunto dinamicamente)
     borderTopWidth: 0,
-    paddingBottom: Platform.OS === 'ios' ? 20 : 0,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: -3 },
     shadowOpacity: 0.1,
     shadowRadius: 3,
     elevation: 10,
+    paddingBottom: 0, // Rimuoviamo il padding fisso, lo aggiungeremo dinamicamente
   },
   tabButton: {
     flex: 1,

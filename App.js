@@ -1,3 +1,5 @@
+// Modifica App.js per includere SafeAreaProvider correttamente
+
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -37,8 +39,8 @@ export default function App() {
   };
 
   return (
-    <ThemeProvider>
-      <SafeAreaProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
         <NavigationContainer>
           <StatusBar style="light" />
           {!isOnboarded ? (
@@ -50,7 +52,7 @@ export default function App() {
             <BottomTabs userLocation={userLocation} />
           )}
         </NavigationContainer>
-      </SafeAreaProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }

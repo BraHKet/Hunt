@@ -1,5 +1,10 @@
 // Mock data for development purposes
-import { v4 as uuidv4 } from 'uuid';
+import * as Crypto from 'expo-crypto';
+
+// Funzione per generare UUID utilizzando expo-crypto
+const generateUUID = () => {
+  return Crypto.randomUUID();
+};
 
 // Reference coordinates - Lecce, Italy
 const LECCE_COORDS = {
@@ -10,7 +15,7 @@ const LECCE_COORDS = {
 // Mock events data
 export const events = [
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Ballast",
     organizerName: "Alezio",
     time: "22:00",
@@ -28,7 +33,7 @@ export const events = [
     vendors: ["v1", "v2", "v3"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Tuesday Vibes MC",
     organizerName: "Morrison's Pub",
     time: "22:30",
@@ -46,7 +51,7 @@ export const events = [
     vendors: ["v4", "v5"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Jam Session",
     organizerName: "Marquinhos",
     time: "21:30",
@@ -64,7 +69,7 @@ export const events = [
     vendors: ["v6"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Mandrake & Soci on Stage",
     organizerName: "The Lesionati Band",
     time: "22:00",
@@ -82,7 +87,7 @@ export const events = [
     vendors: ["v7", "v8"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Maurizio Macrì & Michel Cleis DJ",
     organizerName: "MOI Salento",
     time: "23:59",
@@ -100,7 +105,7 @@ export const events = [
     vendors: ["v9", "v10"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "I Fanffarroni",
     organizerName: "Jungle - Parco Raho",
     time: "22:00",
@@ -118,7 +123,7 @@ export const events = [
     vendors: ["v11"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Squerèz LIVE",
     organizerName: "Birrificio - Cremonini Tributo",
     time: "21:30",
@@ -136,7 +141,7 @@ export const events = [
     vendors: ["v12", "v13"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Viaggio Popolare",
     organizerName: "Arakenamun",
     time: "21:00",
@@ -154,7 +159,7 @@ export const events = [
     vendors: ["v14"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Rolling Stones Night",
     organizerName: "Forca Glam",
     time: "22:00",
@@ -172,7 +177,7 @@ export const events = [
     vendors: ["v15", "v16"]
   },
   {
-    id: uuidv4(),
+    id: generateUUID(),
     title: "Tourdegradabile",
     organizerName: "Piazza Libertini",
     time: "22:00",
@@ -199,9 +204,9 @@ export const vendors = {
     description: "Vendita vinili nuovi e usati di ogni genere musicale",
     image: "https://via.placeholder.com/400x300/FF458F/FFFFFF?text=VinylMania",
     products: [
-      { id: uuidv4(), name: "Vinile Pink Floyd - Dark Side of the Moon", price: 35.00, image: "https://via.placeholder.com/400x300/000000/FFFFFF?text=Pink+Floyd" },
-      { id: uuidv4(), name: "Vinile Beatles - Abbey Road", price: 30.00, image: "https://via.placeholder.com/400x300/FFFFFF/000000?text=Beatles" },
-      { id: uuidv4(), name: "Vinile Daft Punk - Random Access Memories", price: 40.00, image: "https://via.placeholder.com/400x300/FFD700/000000?text=Daft+Punk" }
+      { id: generateUUID(), name: "Vinile Pink Floyd - Dark Side of the Moon", price: 35.00, image: "https://via.placeholder.com/400x300/000000/FFFFFF?text=Pink+Floyd" },
+      { id: generateUUID(), name: "Vinile Beatles - Abbey Road", price: 30.00, image: "https://via.placeholder.com/400x300/FFFFFF/000000?text=Beatles" },
+      { id: generateUUID(), name: "Vinile Daft Punk - Random Access Memories", price: 40.00, image: "https://via.placeholder.com/400x300/FFD700/000000?text=Daft+Punk" }
     ]
   },
   v2: {
@@ -210,8 +215,8 @@ export const vendors = {
     description: "Strumenti musicali vintage e pezzi da collezione",
     image: "https://via.placeholder.com/400x300/A269FF/FFFFFF?text=Vintage+Gear",
     products: [
-      { id: uuidv4(), name: "Chitarra Fender Stratocaster 1975", price: 1200.00, image: "https://via.placeholder.com/400x300/964B00/FFFFFF?text=Stratocaster" },
-      { id: uuidv4(), name: "Amplificatore Marshall JCM800", price: 850.00, image: "https://via.placeholder.com/400x300/000000/FFFFFF?text=Marshall" }
+      { id: generateUUID(), name: "Chitarra Fender Stratocaster 1975", price: 1200.00, image: "https://via.placeholder.com/400x300/964B00/FFFFFF?text=Stratocaster" },
+      { id: generateUUID(), name: "Amplificatore Marshall JCM800", price: 850.00, image: "https://via.placeholder.com/400x300/000000/FFFFFF?text=Marshall" }
     ]
   },
   // ... more vendors similar to the pattern above
@@ -221,9 +226,9 @@ export const vendors = {
     description: "Specialità pugliesi da strada",
     image: "https://via.placeholder.com/400x300/FF7A3D/FFFFFF?text=Street+Food",
     products: [
-      { id: uuidv4(), name: "Panzerotto Fritto", price: 3.50, image: "https://via.placeholder.com/400x300/FFA07A/000000?text=Panzerotto" },
-      { id: uuidv4(), name: "Focaccia Barese", price: 4.00, image: "https://via.placeholder.com/400x300/F5DEB3/000000?text=Focaccia" },
-      { id: uuidv4(), name: "Rustico Leccese", price: 2.50, image: "https://via.placeholder.com/400x300/DEB887/000000?text=Rustico" }
+      { id: generateUUID(), name: "Panzerotto Fritto", price: 3.50, image: "https://via.placeholder.com/400x300/FFA07A/000000?text=Panzerotto" },
+      { id: generateUUID(), name: "Focaccia Barese", price: 4.00, image: "https://via.placeholder.com/400x300/F5DEB3/000000?text=Focaccia" },
+      { id: generateUUID(), name: "Rustico Leccese", price: 2.50, image: "https://via.placeholder.com/400x300/DEB887/000000?text=Rustico" }
     ]
   }
 };
@@ -238,13 +243,13 @@ for (let i = 4; i <= 19; i++) {
     image: `https://via.placeholder.com/400x300/${i % 3 === 0 ? 'FF458F' : i % 3 === 1 ? 'A269FF' : 'FF7A3D'}/FFFFFF?text=Vendor+${i}`,
     products: [
       { 
-        id: uuidv4(), 
+        id: generateUUID(), 
         name: `Product ${i}-1`, 
         price: Math.round(Math.random() * 100) / 2, 
         image: `https://via.placeholder.com/400x300/CCCCCC/000000?text=Product+${i}-1` 
       },
       { 
-        id: uuidv4(), 
+        id: generateUUID(), 
         name: `Product ${i}-2`, 
         price: Math.round(Math.random() * 100) / 2, 
         image: `https://via.placeholder.com/400x300/CCCCCC/000000?text=Product+${i}-2` 

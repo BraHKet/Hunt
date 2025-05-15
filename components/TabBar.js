@@ -1,17 +1,24 @@
+// Modifica components/TabBar.js
+
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import styles from './TabBar.styles';
 import { useTheme } from '../context/ThemeContext';
 
 const TabBar = ({ state, descriptors, navigation }) => {
   const theme = useTheme();
+  const insets = useSafeAreaInsets();
   
   // Get the middle of the array for special center button
   const middleIndex = Math.floor(state.routes.length / 2);
 
   return (
-    <View style={styles.container}>
+    <View style={[
+      styles.container,
+      { paddingBottom: insets.bottom > 0 ? insets.bottom : 16 }
+    ]}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label = options.tabBarLabel || options.title || route.name;
